@@ -2,7 +2,7 @@ version: '3.6'
 services:
     traefik:
         image: traefik
-        command: --web --docker --docker.watch --entryPoints="Name:https Address::443 TLS:/certs/cert.pem,/certs/key.pem" --entryPoints="Name:http Address::80 Redirect.EntryPoint:https"
+        command: --web --docker --docker.watch --docker.network=traefik --entryPoints="Name:https Address::443 TLS:/certs/cert.pem,/certs/key.pem" --entryPoints="Name:http Address::80 Redirect.EntryPoint:https"
         ports:
             - "80:80"
             - "443:443"
