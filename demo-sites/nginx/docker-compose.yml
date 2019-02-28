@@ -1,0 +1,14 @@
+version: '3.6'
+services:
+    example:
+        image: nginx
+        networks:
+             - traefik
+        labels:
+            - traefik.frontend.rule=Host:nginx.$SUFFIX
+            - traefik.enable=true
+
+networks:
+    traefik:
+        external:
+            name: traefik

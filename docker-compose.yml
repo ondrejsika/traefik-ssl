@@ -19,18 +19,6 @@ services:
             - ./certs:/certs
         networks:
             - traefik
-
-# Example service:
-#     example:
-#         image: nginx
-#         networks:
-#              - traefik
-#         labels:
-#             - traefik.frontend.rule=Host:nginx.127.0.0.1.xip.io
-#             - traefik.port=80
-#             - traefik.frontend.entryPoints=http,https
-#             - traefik.docker.network=traefik
-
 networks:
     traefik:
         name: traefik
